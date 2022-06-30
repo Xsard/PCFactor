@@ -1,0 +1,155 @@
+﻿<Window x:Class="GUI.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Height="750" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Normal" ResizeMode="NoResize" Title="PcFuctor">
+    <Grid>
+        <Image Source="IMG/background.png" Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect Radius="10"/>
+            </Image.Effect>
+        </Image>
+        <Grid Height="90" VerticalAlignment="Top"  Margin="40,0">
+            <Border BorderThickness="0,0,0,1" BorderBrush="White"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Width="600" HorizontalAlignment="Left">
+                <Label Content="PcFucktor" Foreground="White"  FontSize="30"/>
+                <Button x:Name="btnMenuClientes" BorderBrush="{x:Null}" Content="Clientes" Background="{x:Null}" Foreground="White" FontSize="15" Margin="20,0,0,0" Click="btnMenuClientes_Click"/>
+                <Button x:Name="btnTec" BorderBrush="{x:Null}" Content="Técnicos" Background="{x:Null}" Foreground="White" FontSize="15" Margin="20,0,0,0" Click="btnTec_Click"/>
+                <Button x:Name="btnAdmin" BorderBrush="{x:Null}" Content="Administrador" Background="{x:Null}" Foreground="White" FontSize="15" Margin="20,0,0,0" Click="btnAdmin_Click"/>
+                <Button x:Name="btnDispositivos" BorderBrush="{x:Null}" Content="Dispositivos" Background="{x:Null}" Foreground="White" FontSize="15" Margin="20,0,0,0" Click="btnDispositivos_Click"/>
+            </StackPanel>
+            <Button x:Name="btnUser" BorderBrush="{x:Null}"  Content="Bienvenido" Margin="0,0,0,10" Background="{x:Null}" Foreground="White" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid Margin="100,120,100,10" x:Name="gridClientes" Visibility="Collapsed"> 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Width="500" x:Name="dtgCli" HorizontalAlignment="Left">
+                
+            </DataGrid>
+            <Grid Height="400" Grid.Column="1" Background="White">
+                <Label Height="30" FontSize="16" VerticalAlignment="Top" HorizontalContentAlignment="Center" Content="Información" BorderThickness="0,0,0,0.5" BorderBrush="Black" Margin="15,0">
+                </Label>
+                <StackPanel Margin="20,50,20,0" Width="404" Orientation="Horizontal">
+                    <StackPanel Width="202">
+                        <Label Content="Rut" />
+                        <TextBox x:Name="txtRutCliente" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Nombre" Margin="0,5"/>
+                        <TextBox x:Name="txtNombreCliente" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Apellido" Margin="0,5"/>
+                        <TextBox x:Name="txtApellidoCliente" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Email" Margin="0,5"/>
+                        <TextBox x:Name="txtEmailCli" Width="180" Height="25"  BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Width="202">
+                        <Label Content="Dirección"/>
+                        <TextBox x:Name="txtDireccionCli" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Número" Margin="0,5"/>
+                        <TextBox x:Name="txtTelefonoCli" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Contraseña" Margin="0,5"/>
+                        <PasswordBox x:Name="txtPass" Width="180" Height="25"  BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>    
+                <Button x:Name="btnAddCli" Height="40" Margin="15,330,15,0" Content="Agregar" Background="DarkBlue" Foreground="White" Click="btnAddCli_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="100,120,100,10" x:Name="gridTec" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Width="500" HorizontalAlignment="Left" x:Name="dtgTec">
+
+            </DataGrid>
+            <Grid Height="400" Grid.Column="1" Background="White">
+                <Label Height="30" FontSize="16" VerticalAlignment="Top" HorizontalContentAlignment="Center" Content="Información" BorderThickness="0,0,0,0.5" BorderBrush="Black" Margin="15,0">
+                </Label>
+                <StackPanel Margin="20,50,20,0" Width="404" Orientation="Horizontal">
+                    <StackPanel Width="202">
+                        <Label Content="Rut"/>
+                        <TextBox x:Name="txtRutTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Nombre"/>
+                        <TextBox x:Name="txtNombreTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Apellido"/>
+                        <TextBox x:Name="txtApellidoTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Width="202">
+                        <Label Content="Teléfono"/>
+                        <TextBox x:Name="txtFonoTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Email"/>
+                        <TextBox x:Name="txtEmailTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Contraseña"/>
+                        <PasswordBox x:Name="txtPassTec"  Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="btnAddTec" Click="btnAddTec_Click" Height="40" Margin="15,330,15,0" Content="Añadir" Background="DarkBlue" Foreground="White"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="100,120,100,10" x:Name="gridAdmin" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Width="500" HorizontalAlignment="Left" x:Name="dtgAdmin">
+
+            </DataGrid>
+            <Grid Height="400" Grid.Column="1" Background="White">
+                <Label Height="30" FontSize="16" VerticalAlignment="Top" HorizontalContentAlignment="Center" Content="Información" BorderThickness="0,0,0,0.5" BorderBrush="Black" Margin="15,0">
+                </Label>
+                <StackPanel Margin="20,50,20,0" Width="404" Orientation="Horizontal">
+                    <StackPanel Width="202">
+                        <Label Content="Rut"/>
+                        <TextBox x:Name="txtRutAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Nombre"/>
+                        <TextBox x:Name="txtNombreAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Apellido"/>
+                        <TextBox x:Name="txtApellidoAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Width="202">
+                        <Label Content="Teléfono"/>
+                        <TextBox x:Name="txtFonoAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Email"/>
+                        <TextBox x:Name="txtEmailAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Contraseña"/>
+                        <PasswordBox x:Name="txtPassAdmin" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="btnAddAdmin" Click="btnAddAdmin_Click" Height="40" Margin="15,330,15,0" Content="Añadir" Background="DarkBlue" Foreground="White"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="100,120,100,10" x:Name="gridDispo" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="550"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Width="500" x:Name="dtgDispo" HorizontalAlignment="Left">
+
+            </DataGrid>
+            <Grid Height="400" Grid.Column="1" Background="White">
+                <Label Height="30" FontSize="16" VerticalAlignment="Top" HorizontalContentAlignment="Center" Content="Información" BorderThickness="0,0,0,0.5" BorderBrush="Black" Margin="15,0">
+                </Label>
+                <StackPanel Margin="20,50,20,0" Width="404" Orientation="Horizontal">
+                    <StackPanel Width="202">
+                        <Label Content="Rut del dueño"/>
+                        <TextBox x:Name="txtRutDis" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Rut del técnico encargado"/>
+                        <TextBox x:Name="txtRutTecDis" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Rut del administrador acargo"/>
+                        <TextBox x:Name="txtRutAdminDis" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Width="202">
+                        <Label Content="Estado del dispositivo"/>
+                        <TextBox x:Name="txtEstadoDis" Width="180" Height="25" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                        <Label Content="Descripción relevante"/>
+                        <TextBox x:Name="txtDescDis" Width="180" Height="75" BorderThickness="0,0,0,1" BorderBrush="Black" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="btnHistorial" Height="40" Margin="15,330,15,0" Content="Agregar" Background="DarkBlue" Foreground="White" Click="btnHistorial_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

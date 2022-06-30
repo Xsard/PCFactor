@@ -1,0 +1,44 @@
+﻿<Window x:Class="GUI.Registro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Height="650" Width="1000"  WindowStartupLocation="CenterScreen" WindowState="Normal" ResizeMode="NoResize" Title="PcFuctor">
+    
+    <Grid>
+        <Image Source="IMG/background.png" Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect Radius="10"/>
+            </Image.Effect>
+        </Image>
+        <Grid Background="White" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Height="450">
+            <StackPanel>
+                <Label Content="Bienvenido a PcFucktor" FontSize="18" Margin="5,10,0,0" Width="200" Height="auto" HorizontalContentAlignment="Left"/>
+                <Label Content="Ingrese sus datos para ser un cliente de PcFucktor" Margin="5,10,0,0" Height="auto" HorizontalContentAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <StackPanel Width="250" Height="250">
+                        <Label Content="Correo" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox VerticalContentAlignment="Center" x:Name="txtCorreo" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <Label Content="Rut" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox VerticalContentAlignment="Center" x:Name="txtRut" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <Label Content="Nombre" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox VerticalContentAlignment="Center" x:Name="txtNombre" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <Label Content="Apellido" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox VerticalContentAlignment="Center" x:Name="txtApellido" Width="200" Margin="0,0,0,0" Height="30"/>
+                    </StackPanel>
+                    <StackPanel Width="250" Height="250">
+                        <Label Content="Direccion" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox Text="" VerticalContentAlignment="Center" x:Name="txtDireccion" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <Label Content="Teléfono" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <TextBox Text="" VerticalContentAlignment="Center" x:Name="txtTelefono" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <Label Content="Contraseña" VerticalContentAlignment="Center" Width="200" Margin="0,0,0,0" Height="30"/>
+                        <PasswordBox x:Name="txtPassword" Width="200" Height="30"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button x:Name="BtnRegistrar" Content="Registrarse" Foreground="White" FontSize="20" Width="200" Margin="0,30,0,0" Height="40" Background="DarkSlateBlue" Click="BtnRegistrar_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
